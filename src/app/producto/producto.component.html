@@ -1,0 +1,75 @@
+<header>
+
+</header>
+<br /><br />
+<div class="ui-g">
+  <p-panel header="Productos" [style]="{ width: '70%', margin: '0 auto' }">
+    <p-table
+      [value]="productos"
+      [columns]="cols"
+      [paginator]="true"
+      [rows]="16"
+    >
+      <!-- Header template -->
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">{{ col.header }}</th>
+          <th></th>
+        </tr>
+        
+      </ng-template>
+
+      <!-- Body template -->
+      <ng-template pTemplate="body" let-producto>
+        <tr>
+          <td>
+            <!-- Columna de nombre -->
+            {{ producto.prod_nombre }}
+          </td>
+          <td>
+            <!-- Columna de marca -->
+            {{ producto.marca_nombre }}
+          </td>
+          <td>
+            <!-- Columna de categoría -->
+            {{ producto.categoria?.cat_nombre }}
+          </td>
+          <td>
+            <!-- Columna de proveedor -->
+            <img [src]="producto.proveedor?.prov_foto" alt="Foto del proveedor" width="100" />
+          </td>
+          <td>
+            <!-- Columna de precio -->
+            {{ producto.precio | currency : "S/." }}
+          </td>
+          <td>
+            <!-- Columna de foto -->
+            <img [src]="producto.prod_foto" alt="Foto del producto" width="130" />
+          </td>
+          <td>
+            <!-- Columna de URL -->
+            <a [href]="producto.prod_url" target="_blank">
+              <button pButton pRipple label="Ver Oferta" class="p-button-oferta"></button>
+            </a>
+          </td>
+          <td>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-heart"
+              class="p-button-rounded p-button-success mr-2"
+              (click)="favProducto()"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+      
+    </p-table>
+  </p-panel>
+</div>
+
+<br /><br /><br /><br />
+
+<footer>
+  <p>footer en proceso</p>
+</footer>

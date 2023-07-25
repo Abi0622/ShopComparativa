@@ -1,0 +1,10 @@
+.card-content .table {
+    width: 100%;
+  }
+  
+  .description-cell,
+  .phone-cell {
+    word-wrap: break-word;
+    max-width: 200px;
+  }
+  

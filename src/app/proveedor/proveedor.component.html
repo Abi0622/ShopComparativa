@@ -1,0 +1,24 @@
+<div class="card-container">
+  <ng-container *ngFor="let proveedor of proveedores">
+    <p-card header="{{ proveedor.prov_nombre }}">
+      <div class="card-content">
+        <table class="table">
+          <thead>
+            <tr>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <td><img [src]="proveedor.prov_foto" alt="Foto del proveedor" width="100"></td>
+            <tr>
+              <td>{{ proveedor.prov_descripcion }}</td>
+            </tr>
+            <tr>
+              <td colspan="2">{{ proveedor.prov_telefono }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </p-card>
+  </ng-container>
+</div>
